@@ -14,9 +14,11 @@ console.log(" ");
 
 Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. Получится 'В списке 3 категории.'.*/
 
-const allListCategoriesRef = document.querySelectorAll('.item');
-console.log(`В списке ${allListCategoriesRef.length} категории`);
-console.log(' ');
+const allItems = document.querySelectorAll('.item');
+const allItemsQty = allItems.length;
+
+console.log(`В списке ${allItemsQty} категории.`);
+console.log(" ");
 
 /*
 Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега h2) и количество элементов в категории (всех вложенных в него элементов li).
@@ -26,16 +28,17 @@ console.log(' ');
 Категория: Животные
 Количество элементов: 4*/
 
+allItems.forEach((element) => {
 
+let elementTitle = element.querySelector('h2').textContent;
 
-allListCategoriesRef.forEach((item) => {
-   
-  const itemNameRef = item.querySelector('h2');
-  const singleCategoryAllItemsRef = item.querySelectorAll('li');
-  
-  console.log(`Категория: ${itemNameRef.textContent}
-  Количество элементов: ${singleCategoryAllItemsRef.length}`);
-  console.log(' ');
+let oneTitleElements = element.querySelectorAll('li');
+let oneTitleElemntsQty = oneTitleElements.length;
+
+  console.log(`Категория: ${elementTitle}`);
+    console.log(`Количество элементов: ${oneTitleElemntsQty}`);
+    console.log(" ");
+
 });
 
 //Task END
