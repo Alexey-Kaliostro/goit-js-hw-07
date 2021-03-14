@@ -22,13 +22,15 @@ const ingredients = [
   'Приправы',
 ];
 
-for (const ingredient of ingredients) {
 
-    const ingredientItem = document.createElement("li");
-    ingredientItem.textContent = `${ingredient}`;
+
+for (const ingredient of ingredients) {
+  
+  const singleListItemRef = document.createElement('li');
+  singleListItemRef.textContent = ingredient;
     
-    const listRef = document.querySelector("#ingredients");
-    listRef.appendChild(ingredientItem);
+  const ingredientsListRef = document.querySelector('#ingredients');
+  ingredientsListRef.appendChild(singleListItemRef);
 
 }
 
