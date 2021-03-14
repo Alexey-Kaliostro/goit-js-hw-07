@@ -12,7 +12,14 @@ console.log(" ");
 
 // Task START
 
+const inputFieldRef = document.querySelector('input');
+const spanNameRef = document.querySelector('span');
 
+const userNameWriter = () => {
+    spanNameRef.textContent = inputFieldRef.value
+}
+
+inputFieldRef.addEventListener('input', userNameWriter);
 
 //Task END
 
