@@ -34,45 +34,37 @@ console.log(" ");
 
 // Task START
 
+// ссылка на DOM input
 const inputFieldRef = document.querySelector('input');
-let characterLimiter = inputFieldRef.getAttribute('data-length')
 
-let numberOfCharakters = 0;
-
-const charactersCounter = () => {
-    numberOfCharakters += 1;
-    //console.log('one more character')
-    console.log(numberOfCharakters)
-    if (numberOfCharakters != characterLimiter) {
-        inputFieldRef.classList.add('invalid');
-        //elem.classList.add(cls)
-    }
-}
+// переменная в которой храниться лимит символов для input
+let characterLimiter = parseInt(inputFieldRef.getAttribute('data-length'))
 
 
-
-const onFocusEvent = () => {
-    console.log('hello')
-    console.log(inputFieldRef.value.length)
-
-if (numberOfCharakters != characterLimiter) {
-        inputFieldRef.classList.add('invalid');
-        //elem.classList.add(cls)
-    }
-
-}
-
+// событие на потерю фокуса и валидацию инпута
 const onBlurEvent = () => {
-    console.log('goodbye')
+    
+  if (inputFieldRef.value.length === characterLimiter) {
+    inputFieldRef.classList.remove('invalid')
+    inputFieldRef.classList.add('valid');
+  }
+  else if (inputFieldRef.value.length === 0) {
+    inputFieldRef.classList.remove('valid')
+    inputFieldRef.classList.remove('invalid')
+    
+  }
+  else {
+    inputFieldRef.classList.add('invalid');
+  }
+  
 }
 
-inputFieldRef.addEventListener('focus', onFocusEvent)
+// вызов события на потерю фокуса
 inputFieldRef.addEventListener('blur', onBlurEvent)
-inputFieldRef.addEventListener('input', charactersCounter)
-
-
 
 //Task END
 
 console.log(" ");
 console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
+
