@@ -38,7 +38,7 @@ console.log(" ");
 const inputFieldRef = document.querySelector('input');
 
 // переменная в которой храниться лимит символов для input
-let characterLimiter = parseInt(inputFieldRef.getAttribute('data-length'))
+const characterLimiter = parseInt(inputFieldRef.getAttribute('data-length'))
 
 
 // событие на потерю фокуса и валидацию инпута
