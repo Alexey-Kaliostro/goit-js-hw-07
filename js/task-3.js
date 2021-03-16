@@ -42,7 +42,7 @@ const images = [
 const galleryRef = document.querySelector('#gallery');
 
 const gallerySingleImageRef = ({ url, alt }) => {
-    return `<img class='gallery-item' src='${url}' alt='${alt}'>`
+    return `<li class='gallery-item'><img class='gallery-image' src='${url}' alt='${alt}'></>`
 }
 
 

@@ -1,4 +1,10 @@
-.gallery-item {
-  width: 300px;
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.gallery-image {
+  width: 350px;
   padding-right: 25px;
 }
