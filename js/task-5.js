@@ -15,8 +15,10 @@ console.log(" ");
 const inputFieldRef = document.querySelector('input');
 const spanNameRef = document.querySelector('span');
 
+
 const userNameWriter = () => {
-    spanNameRef.textContent = inputFieldRef.value
+  
+    spanNameRef.textContent = inputFieldRef.value || 'незнакомец';
 }
 
 inputFieldRef.addEventListener('input', userNameWriter);
